@@ -1,90 +1,81 @@
-import { React } from "react";
+import Card from "./components/card";
 import "./App.css";
 
-function App() {
+const App = () =>{
+  let data = [
+    {
+      plan: "FREE",
+      price: 0,
+      user: "Single User",
+      isUser: true,
+      storage: "50GB Storage",
+      isStorage: true,
+      publicProjects: "Unlimited Public Projects",
+      isPublicProjects: true,
+      communityAccess: "Community Access",
+      isCommunityAccess: true,
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: false,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: false,
+      subDomain: "Free Subdomain",
+      isSubDomain: false,
+      reports: "Monthly Status Reports",
+      isReports: false,
+    },
+    {
+      plan: "PLUS",
+      price: 9,
+      user: "5 Users",
+      isUser: true,
+      storage: "50GB Storage",
+      isStorage: true,
+      publicProjects: "Unlimited Public Projects",
+      isPublicProjects: true,
+      communityAccess: "Community Access",
+      isCommunityAccess: true,
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: true,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: true,
+      subDomain: "Free Subdomain",
+      isSubDomain: true,
+      reports: "Monthly Status Reports",
+      isReports: false,
+    },
+    {
+      plan: "PRO",
+      price: 49,
+      user: "Unlimited Users",
+      isUser: true,
+      storage: "50GB Storage",
+      isStorage: true,
+      publicProjects: "Unlimited Public Projects",
+      isPublicProjects: true,
+      communityAccess: "Community Access",
+      isCommunityAccess: true,
+      privateProjects: "Unlimited Private Projects",
+      isPrivateProjects: true,
+      phoneSupport: "Dedicated Phone Support",
+      isPhoneSupport: true,
+      subDomain: "Free Subdomains",
+      isSubDomain: true,
+      reports: "Monthly Status Reports",
+      isReports: true,
+    },
+  ];
   return (
-    <div className="container mainFream">
-      <div class="container overflow-hidden">
-        <div class="row gy-5">
-          <div class="col-4">
-            <div class="p-3 border borderlg">
-              <div>
-                <div className="heading">
-                  <p className="text-secondary">Free</p>
-                </div>
-                <h1>$0/month</h1>
-                <hr className="text-secondary"></hr>
-                <p><i class="bi bi-check fs-5"></i> Single User</p>
-                <p><i class="bi bi-check fs-5"></i> 50GB Storage</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Public Projects</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Access</p>
-                <div className="text-secondary">
-                  <p><i class="bi bi-x"></i> Community Access</p>
-                  <p><i class="bi bi-x"></i> Unlimited Prviate Projects</p>
-                  <p><i class="bi bi-x"></i> Dedicated Phone Support</p>
-                  <p><i class="bi bi-x"></i> Free Subdomain</p>
-                  <p><i class="bi bi-x"></i> Monthly Status Reports</p>
-                </div>
-                <div className="button">
-                  <button className="btnButton bg-primary" type="submit">Button</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-3 border borderlg">
-              <div>
-                <div className="heading">
-                  <p className="text-secondary">Plus</p>
-                </div>
-                <h1>$9/month</h1>
-                <hr className="text-secondary"></hr>
-                <p><i class="bi bi-check fs-5"></i> 5 User</p>
-                <p><i class="bi bi-check fs-5"></i> 50GB Storage</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Public Projects</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Access</p>
-                <p><i class="bi bi-check fs-5"></i> Community Access</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Prviate Projects</p>
-                <p><i class="bi bi-check fs-5"></i> Dedicated Phone Support</p>
-                <p><i class="bi bi-check fs-5"></i> Free Subdomain</p>
-                <div className="text-secondary">
-                  <p><i class="bi bi-x"></i> Monthly Status Reports</p>
-                </div>
-                <div className="button">
-                  <button className="btnButton bg-primary" type="submit">Button</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-3 border borderlg">
-              <div>
-                <div className="heading">
-                  <p className="text-secondary">Pro</p>
-                </div>
-                <h1>$49/month</h1>
-                <hr className="text-secondary"></hr>
-                <p> <i class="bi bi-check fs-5"></i> Unlimited User</p>
-                <p><i class="bi bi-check fs-5"></i> 50GB Storage</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Public Projects</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Access</p>
-                <p><i class="bi bi-check fs-5"></i> Community Access</p>
-                <p><i class="bi bi-check fs-5"></i> Unlimited Prviate Projects</p>
-                <p><i class="bi bi-check fs-5"></i> Dedicated Phone Support</p>
-                <p><i class="bi bi-check fs-5"></i> Free Subdomain</p>
-                <p><i class="bi bi-check fs-5"></i> Monthly Status Reports</p>
-                <div className="button">
-                  <button className="btnButton bg-primary" type="submit">Button</button>
-                </div>
-              </div>
-            </div>
+    <>
+      <section className="pricing py-5">
+        <div className="container">
+          <div className="row">
+            {data.map((e, i) => {
+              return <Card data={e} key={i} />;
+            })}
           </div>
         </div>
-      </div>
-    </div>
-
+      </section>
+    </>
   );
-
 }
-
 export default App;
